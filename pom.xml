@@ -21,13 +21,20 @@
         <java.version>1.8</java.version>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
+        <mysql.version>5.1.46</mysql.version>
+        <!--  环境设置      -->
 
-        <!-- spring setting 注意在官网查找版本 -->
+        <!-- spring cloud 注意在官网查找版本 -->
         <spring-cloud.version>Finchley.RELEASE</spring-cloud.version>
         <!-- 服务链路追踪，服务的依赖关系和交互时间 -->
         <zipkin.version>2.10.1</zipkin.version>
         <!-- 服务监控 -->
         <admin.version>2.0.3</admin.version>
+        <!--  数据库连接池      -->
+        <druid.alibaba.version>1.1.10</druid.alibaba.version>
+
+        <tkMybatis.version>2.0.2</tkMybatis.version>
+        <pagehelper.version>1.2.5</pagehelper.version>
     </properties>
     <distributionManagement>
         <repository>
@@ -44,6 +51,31 @@
 
     <dependencyManagement>
         <dependencies>
+<!-- environment setting           -->
+            <dependency>
+                <groupId>mysql</groupId>
+                <artifactId>mysql-connector-java</artifactId>
+                <version>${mysql.version}</version>
+                <scope>runtime</scope>
+            </dependency>
+<!-- environment setting end           -->
+<!-- spring boot start           -->
+            <dependency>
+                <groupId>com.alibaba</groupId>
+                <artifactId>druid-spring-boot-starter</artifactId>
+                <version>${druid.alibaba.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>tk.mybatis</groupId>
+                <artifactId>mapper-spring-boot-starter</artifactId>
+                <version>${tkMybatis.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.github.pagehelper</groupId>
+                <artifactId>pagehelper-spring-boot-starter</artifactId>
+                <version>${pagehelper.version}</version>
+            </dependency>
+<!-- spring boot end           -->
             <dependency>
                 <groupId>org.springframework.cloud</groupId>
                 <artifactId>spring-cloud-dependencies</artifactId>

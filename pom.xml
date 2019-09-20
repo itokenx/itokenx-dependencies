@@ -35,6 +35,8 @@
 
         <tkMybatis.version>2.0.2</tkMybatis.version>
         <pagehelper.version>1.2.5</pagehelper.version>
+
+        <lombok.version>1.16.18</lombok.version>
     </properties>
     <distributionManagement>
         <repository>
@@ -59,6 +61,11 @@
                 <scope>runtime</scope>
             </dependency>
 <!-- environment setting end           -->
+            <dependency>
+                <groupId>org.projectlombok</groupId>
+                <artifactId>lombok</artifactId>
+                <version>${lombok.version}</version>
+            </dependency>
 <!-- spring boot start           -->
             <dependency>
                 <groupId>com.alibaba</groupId>
